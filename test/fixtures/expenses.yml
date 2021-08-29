@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2021-08-29 12:09:23
+  balanced: false
+  total: 9.99
+  description: MyString
+
+two:
+  date: 2021-08-29 12:09:23
+  balanced: false
+  total: 9.99
+  description: MyString
