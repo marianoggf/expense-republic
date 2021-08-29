@@ -12,11 +12,14 @@
 
 ActiveRecord::Schema.define(version: 2021_08_29_152854) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "debts", force: :cascade do |t|
     t.boolean "paid", default: false
     t.decimal "total"
-    t.integer "expense_id", null: false
-    t.integer "tenant_id", null: false
+    t.bigint "expense_id", null: false
+    t.bigint "tenant_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["expense_id"], name: "index_debts_on_expense_id"

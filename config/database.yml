@@ -24,11 +24,21 @@
 #   <<: *default
 #   database: db/production.sqlite3
 
+default: &default
+  adapter: postgresql
+  encoding: unicode
+
 
 development:
   adapter: postgresql
   encoding: unicode
-  database: expense-republic
+  database: expense-republic-dev
   pool: 5
   username: blogmutt
   password:
+
+production:
+  database: df6p8pgohmu46a
+  username: bjvydwccraknnq
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
