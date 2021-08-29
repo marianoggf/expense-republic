@@ -13,7 +13,7 @@ class Expense < ApplicationRecord
   private
 
   def tenants_percent_sum
-    Tenant.sum(:percent) == 1
+    errors.add(:base, 'No se puede crear, la suma de porcentajes no da 100%') if Tenant.sum(:percent) != 100
   end
 
   def non_paid_debts
